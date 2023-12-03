@@ -14,13 +14,16 @@ import lombok.Setter;
 public class UserDto
 {
     private Long id;
-    @NotEmpty
+
+    @NotEmpty(message = "Le prénom ne doit pas être vide")
     private String firstName;
-    @NotEmpty
+
+    @NotEmpty(message = "Le nom ne doit pas être vide")
     private String lastName;
-    @NotEmpty(message = "Email should not be empty")
-    @Email
+
+    @NotEmpty(message = "L'email ne doit pas être vide") @Email
     private String email;
-    @NotEmpty(message = "Password should not be empty")
+
+    @NotEmpty(message = "Le mot de passe ne doit pas être vide")
     private String password;
 }

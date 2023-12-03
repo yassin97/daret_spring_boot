@@ -30,7 +30,8 @@ public class SpringSecurity {
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers("/register/**").permitAll()
                                 .requestMatchers("/index").permitAll()
-                                .requestMatchers("/darets").permitAll()
+                                .requestMatchers("/darets").authenticated()
+                                .requestMatchers("/daret/{name}").authenticated()
                                 .requestMatchers("/users").hasRole("ADMIN")
                                 .requestMatchers("/create_daret").hasRole("ADMIN")
                                 .requestMatchers("/update_daret").hasRole("ADMIN")

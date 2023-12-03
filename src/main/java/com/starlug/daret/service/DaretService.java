@@ -12,5 +12,7 @@ public interface DaretService {
 
     Daret findByName(String name);
 
+    DaretDto findByNameDto(String name);
+
     List<DaretDto> findAllDarets();
 }

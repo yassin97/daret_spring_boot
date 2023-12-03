@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<div th:replace="a_fragment_head :: head"></div>
+<body>
+<div th:replace="a_fragment_navbar :: navbar"></div>
+<div class="container">
+
+    <div class="card my-4">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" style="width: 20px;" class="mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                    </svg>
+                    <span th:text="${daret.created_by}"></span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" style="width: 20px;" class="mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                    </svg>
+                    <span th:text="${daret.created_at}"></span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div th:text="${daret.name}"></div>
+                <span th:class="${daret.active ? 'badge badge-success' : 'badge badge-danger'}"
+                      th:text="${daret.active ? 'Actif' : 'Pas encore actif'}"></span>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="jumbotron mt-4 pt-4 pb-4">
+                <div class="row">
+                    <ul class="list-group col-4">
+                        <li class="list-group-item bg-secondary text-white text-center">Period</li>
+                        <li class="list-group-item text-center" th:text="${daret.frequency}"></li>
+                    </ul>
+                    <ul class="list-group col-4">
+                        <li class="list-group-item bg-secondary text-white text-center">Date de démarrage</li>
+                        <li class="list-group-item text-center" th:text="${daret.start_date}"></li>
+                    </ul>
+                    <ul class="list-group col-4">
+                        <li class="list-group-item bg-secondary text-white text-center">Montant</li>
+                        <li class="list-group-item text-center" th:text="${daret.amount}"></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="row ml-1">
+                <ul class="list-group col-8">
+                    <li class="list-group-item bg-secondary text-white d-flex justify-content-between align-items-center">
+                        <span>Liste des participants</span>
+                        <span class="badge badge-pill rounded-8 bg-info">10</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Dapibus ac facilisis
+                        in
+                        <span class="badge badge-success badge-pill">10000 dhs</span>
+                    </li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <ul class="list-group col-4">
+                    <li class="list-group-item bg-secondary text-white text-center">Turn de role</li>
+                    <li class="list-group-item">Dapibus ac</li>
+                    <li class="list-group-item active">Morbi leo</li>
+                    <li class="list-group-item">Porta ac</li>
+                    <li class="list-group-item">Vestibulum at</li>
+                </ul>
+            </div>
+
+            <div class="jumbotron mt-4 pt-4 pb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>Bénéficiaire actuel</span>
+                    <span>Morbi Leo <span class="badge badge-success ml-2">10000 DHs</span> </span>
+                </div>
+                <hr class="my-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>Bénéficiaire suivant</span>
+                    <span>Morbi Leo <span class="badge badge-success ml-2">10000 DHs</span> </span>
+                </div>
+                <hr class="my-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="rounded text-white bg-secondary p-2">Réalisé : 4 participants</span>
+                    <span class="rounded text-white bg-secondary p-2">Restant : 5 participants</span>
+                </div>
+            </div>
+
+            <form class="d-flex justify-content-between align-items-center mx-2">
+                <button type="button" class="btn btn-success">Participer</button>
+                <button type="button" class="btn btn-secondary">Quitter</button>
+                <button type="button" class="btn btn-primary">Modifier</button>
+                <button type="button" class="btn btn-danger">Supprimer</button>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand navbar-brand px-4 bg-primary rounded-3 text-xl-center" href="/darets">Daret</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/register}" th:if="${session['loggedInUsername'] == null}">Inscrivez-vous</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page"
+             th:href="@{/logout}" th:if="${session['loggedInUsername'] != null}">Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+    <div class="" th:if="${session['loggedInUsername'] != null}">
+      <h1 class="badge badge-info font-weight-normal" style="font-size: 20px"> Bienvenu, <span th:text="${session['loggedInUsername']}"></span> </h1>
+    </div>
+  </div>
+</nav>
+
