@@ -14,6 +14,7 @@ public class DaretDto {
     private Long id;
 
     private String created_by;
+    private String created_by_email;
 
     @NotEmpty(message = "Specify the name of your daret!")
     private String name;

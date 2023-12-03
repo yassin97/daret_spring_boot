@@ -55,6 +55,10 @@ public class DaretServiceImpl implements DaretService {
         User user = userRepository.findById(userId).orElse(null);
         return (user != null) ? user.getName() : null;
     }
+    private String getUserEmailById(Long userId) {
+        User user = userRepository.findById(userId).orElse(null);
+        return (user != null) ? user.getEmail() : null;
+    }
 
     private String getFrequency(Integer days) {
         if (days <= 7) return "Chaque semaine";
@@ -83,6 +87,7 @@ public class DaretServiceImpl implements DaretService {
         daretDto.setName(daret.getName());
         daretDto.setStart_date(this.getFormattedDateTime(daret.getStart_date()));
         daretDto.setCreated_by(this.getUserNameById(daret.getCreated_by()));
+        daretDto.setCreated_by_email(this.getUserEmailById(daret.getCreated_by()));
         daretDto.setAmount(this.formatNumber(daret.getAmount()));
         daretDto.setDraw(daret.getDraw());
         daretDto.setParticipant_number(daret.getParticipant_number() + " personnes");

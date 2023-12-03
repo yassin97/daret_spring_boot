@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<div th:replace="a_fragment_head :: head"></div>
 <body>
+<div th:replace="a_fragment_navbar :: navbar"></div>
+<div class="container">
+
+    <h1 class="heading mt-4 text-center">Créé un nouveau Daret</h1>
+    <form class="mt-4">
+        <div class="form-group">
+            <label for="daretName">Nom</label>
+            <input type="text" class="form-control" id="daretName" placeholder="Donner un nom pour votre Daret">
+        </div>
+        <div class="form-group">
+            <label for="peopleNumber">Nombre des personnes</label>
+            <input type="number" class="form-control" id="peopleNumber" placeholder="Donner le nombre des personnes qui vont participer">
+        </div>
+        <div class="form-group">
+            <label for="amount">Montant de chaque période pour chaque personne</label>
+            <input type="number" class="form-control" id="amount" placeholder="Donner le montant de chaque période">
+        </div>
+        <div class="form-group">
+            <label for="startDate">Date de démarrage</label>
+            <input type="date" th:value="${currentDate}" class="form-control" id="startDate" placeholder="Donner la date de démarrage">
+        </div>
+        <div class="form-group">
+            <label for="frequency">La périodicité</label>
+            <select class="form-control" id="frequency">
+                <option>Choisissez la périodicité</option>
+                <option>Chaque semaine</option>
+                <option>Toutes les deux semaines</option>
+                <option>Toutes les trois semaines</option>
+                <option>Mensuel</option>
+                <option>Tous les deux mois</option>
+                <option>Tous les trois mois</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Créé</button>
+    </form>
+</div>
 
 </body>
 </html>

@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.time.LocalDate;
@@ -23,7 +24,7 @@ public class Daret {
 
     private Long created_by;
 
-    @JsonFormat(pattern="yyyy-MM--dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM--dd HH:mm:ss") @Column(nullable = false, updatable = false) @CreationTimestamp
     private Date created_at;
 
     @Column(unique = true)

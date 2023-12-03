@@ -4,6 +4,11 @@
 <body>
 <div th:replace="a_fragment_navbar :: navbar"></div>
 <div class="container">
+
+    <form action="/darets/new" method="get" class="mt-4">
+        <button type="submit" class="btn btn-success">Créé un nouveau</button>
+    </form>
+
     <table class="table table-striped table-bordered table-hover mt-4">
         <thead class="table-dark bg-dark">
         <tr>
@@ -12,6 +17,7 @@
             <th>Numéro des participants</th>
             <th>Period</th>
             <th>Statut</th>
+            <th>Date de démarrage</th>
             <th>Montant</th>
         </tr>
         </thead>
@@ -27,6 +33,7 @@
                 <span th:class="${daret.active ? 'badge badge-success' : 'badge badge-danger'}"
                       th:text="${daret.active ? 'Actif' : 'Pas encore actif'}"></span>
             </td>
+            <td th:text="${daret.start_date}"></td>
             <td th:text="${daret.amount}"></td>
         </tr>
         </tbody>

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.security.Principal;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -32,6 +34,12 @@ public class DaretController {
         List<DaretDto> darets = daretService.findAllDarets();
         model.addAttribute("darets", darets);
         return "darets";
+    }
+
+    @GetMapping("/darets/new")
+    public String create(Model model) {
+        model.addAttribute("currentDate", LocalDate.now());
+        return "create_daret";
     }
 
     @GetMapping("/daret/{name}")
