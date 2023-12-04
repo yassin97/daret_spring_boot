@@ -19,7 +19,7 @@ public class DaretDto {
     @NotEmpty(message = "Specify the name of your daret!")
     private String name;
 
-//    @NotEmpty(message = "Specify the number of your daret!")
+    @NotEmpty(message = "Specify the number of your daret!")
     private Integer participant_number;
 
 //    @NotEmpty(message = "Specify the frequency of your daret using days only! (7days = week; 30days = month)")

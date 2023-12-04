@@ -10,7 +10,8 @@
     <form class="mt-4" method="post" role="form" th:action="@{/daret/save}" th:object="${daret}">
         <div class="form-group">
             <label for="daretName">Nom</label>
-            <input type="text" name="name" class="form-control" id="daretName" placeholder="Donner un nom pour votre Daret">
+            <input type="text" name="name" th:field="*{name}" class="form-control" id="daretName" placeholder="Donner un nom pour votre Daret">
+            <p th:errors="*{name}" class="text-danger" th:if="${#fields.hasErrors('name')}"></p>
         </div>
 
         <div class="form-group">

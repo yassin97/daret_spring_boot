@@ -33,6 +33,7 @@ public class DaretServiceImpl implements DaretService {
         daret.setName(daretDto.getName());
         daret.setCreated_at(new Date());
         daret.setCreated_by(2L); //
+        daret.setActive(false); //
         daret.setParticipant_number(daretDto.getParticipant_number());
         daret.setAmount(daretDto.getAmount());
         System.out.println(daretDto.getStart_date());
