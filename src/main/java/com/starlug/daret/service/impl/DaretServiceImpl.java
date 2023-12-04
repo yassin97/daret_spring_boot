@@ -31,6 +31,13 @@ public class DaretServiceImpl implements DaretService {
     public void saveDaret(DaretDto daretDto) {
         Daret daret = new Daret();
         daret.setName(daretDto.getName());
+        daret.setCreated_at(new Date());
+        daret.setCreated_by(2L); //
+        daret.setParticipant_number(daretDto.getParticipant_number());
+        daret.setAmount(daretDto.getAmount());
+        System.out.println(daretDto.getStart_date());
+        daret.setStart_date(new Date());
+        daret.setFrequency_by_days(30); //
         //..
         daretRepository.save(daret);
     }
@@ -88,9 +95,9 @@ public class DaretServiceImpl implements DaretService {
         daretDto.setStart_date(this.getFormattedDateTime(daret.getStart_date()));
         daretDto.setCreated_by(this.getUserNameById(daret.getCreated_by()));
         daretDto.setCreated_by_email(this.getUserEmailById(daret.getCreated_by()));
-        daretDto.setAmount(this.formatNumber(daret.getAmount()));
+        daretDto.setAmountString(this.formatNumber(daret.getAmount()));
         daretDto.setDraw(daret.getDraw());
-        daretDto.setParticipant_number(daret.getParticipant_number() + " personnes");
+        daretDto.setParticipant_number(daret.getParticipant_number());
         daretDto.setFrequency(this.getFrequency(daret.getFrequency_by_days()));
         daretDto.setTurn_user_id(daret.getTurn_user_id());
         daretDto.setStep_number(daret.getStep_number());

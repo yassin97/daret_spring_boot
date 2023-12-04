@@ -20,18 +20,20 @@ public class DaretDto {
     private String name;
 
 //    @NotEmpty(message = "Specify the number of your daret!")
-    private String participant_number;
+    private Integer participant_number;
 
-    @NotEmpty(message = "Specify the frequency of your daret using days only! (7days = week; 30days = month)")
+//    @NotEmpty(message = "Specify the frequency of your daret using days only! (7days = week; 30days = month)")
     private String frequency;
 
-    @NotEmpty(message = "Specify the name of your daret!")
+//    @NotEmpty(message = "Specify the name of your daret!")
     private String start_date;
 
     private String created_at;
 
-    @NotEmpty(message = "Specify the target amount of your daret")
-    private String amount;
+//    @NotEmpty(message = "Specify the target amount of your daret")
+    private Double amount;
+
+    private String amountString;
     private String draw;
     private Long turn_user_id;
     private Integer step_number;

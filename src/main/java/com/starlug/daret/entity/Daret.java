@@ -1,16 +1,13 @@
 package com.starlug.daret.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -33,7 +30,7 @@ public class Daret {
     private Integer participant_number;
     private Integer frequency_by_days; // 7 -> week; 14; 2 weeks;
 
-    @JsonFormat(pattern="yyyy-MM--dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date start_date;
 
     private Double amount;
