@@ -16,21 +16,21 @@ public class DaretDto {
     private String created_by;
     private String created_by_email;
 
-    @NotEmpty(message = "Specify the name of your daret!")
+    @NotEmpty(message = "Spécifiez le nom de votre daret!")
     private String name;
 
-    @NotEmpty(message = "Specify the number of your daret!")
+//    @NotEmpty(message = "Spécifiez le numéro de participants!")
     private Integer participant_number;
 
-//    @NotEmpty(message = "Specify the frequency of your daret using days only! (7days = week; 30days = month)")
+//    @NotEmpty(message = "Spécifiez la périodicité de votre daret en utilisant uniquement les jours! (7 jours = semaine ; 30 jours = mois)")
     private String frequency;
 
-//    @NotEmpty(message = "Specify the name of your daret!")
+//    @NotEmpty(message = "Spécifiez la date démarrage!")
     private String start_date;
 
     private String created_at;
 
-//    @NotEmpty(message = "Specify the target amount of your daret")
+//    @NotEmpty(message = "Précisez le Montant de chaque période pour chaque personne")
     private Double amount;
 
     private String amountString;

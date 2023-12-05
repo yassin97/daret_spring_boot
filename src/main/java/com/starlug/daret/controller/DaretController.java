@@ -43,7 +43,9 @@ public class DaretController {
 
     @GetMapping("/darets/new")
     public String create(Model model) {
+        DaretDto daret = new DaretDto();
         model.addAttribute("currentDate", LocalDate.now());
+        model.addAttribute("daret", daret);
         return "create_daret";
     }
 

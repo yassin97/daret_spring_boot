@@ -10,22 +10,27 @@
     <form class="mt-4" method="post" role="form" th:action="@{/daret/save}" th:object="${daret}">
         <div class="form-group">
             <label for="daretName">Nom</label>
-            <input type="text" name="name" class="form-control" id="daretName" placeholder="Donner un nom pour votre Daret">
-<!--            <input type="text" name="name" th:field="*{name}" class="form-control" id="daretName" placeholder="Donner un nom pour votre Daret">-->
-<!--            <p th:errors="*{name}" class="text-danger" th:if="${#fields.hasErrors('name')}"></p>-->
+            <input type="text" name="name" th:field="*{name}" class="form-control" id="daretName" placeholder="Donner un nom pour votre Daret">
+            <p th:errors="*{name}" class="text-danger" th:if="${#fields.hasErrors('name')}"></p>
         </div>
 
         <div class="form-group">
             <label for="peopleNumber">Nombre des personnes</label>
             <input type="number" name="participant_number" class="form-control" id="peopleNumber" placeholder="Donner le nombre des personnes qui vont participer">
+<!--            <input type="number" name="participant_number" th:field="*{participant_number}" class="form-control" id="peopleNumber" placeholder="Donner le nombre des personnes qui vont participer">-->
+<!--            <p th:errors="*{participant_number}" class="text-danger" th:if="${#fields.hasErrors('participant_number')}"></p>-->
         </div>
         <div class="form-group">
             <label for="amount">Montant de chaque période pour chaque personne</label>
             <input type="number" name="amount" class="form-control" id="amount" placeholder="Donner le montant de chaque période">
+<!--            <input type="number" name="amount" th:field="*{amount}" class="form-control" id="amount" placeholder="Donner le montant de chaque période">-->
+<!--            <p th:errors="*{amount}" class="text-danger" th:if="${#fields.hasErrors('amount')}"></p>-->
         </div>
         <div class="form-group">
             <label for="startDate">Date de démarrage</label>
             <input type="date" name="start_date" th:value="${currentDate}" class="form-control" id="startDate" placeholder="Donner la date de démarrage">
+<!--            <input type="date" name="start_date" th:field="*{start_date}" th:value="${currentDate}" class="form-control" id="startDate" placeholder="Donner la date de démarrage">-->
+<!--            <p th:errors="*{start_date}" class="text-danger" th:if="${#fields.hasErrors('start_date')}"></p>-->
         </div>
         <div class="form-group">
             <label for="frequency">La périodicité</label>

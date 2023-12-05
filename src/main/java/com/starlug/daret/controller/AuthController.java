@@ -23,7 +23,7 @@ public class AuthController {
     }
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "index";
     }
 
@@ -33,8 +33,8 @@ public class AuthController {
     }
 
     // handler method to handle user registration request
-    @GetMapping("register")
-    public String showRegistrationForm(Model model){
+    @GetMapping("/register")
+    public String showRegistrationForm(Model model) {
         UserDto user = new UserDto();
         model.addAttribute("user", user);
         return "register";
@@ -44,7 +44,7 @@ public class AuthController {
     @PostMapping("/register/save")
     public String registration(@Valid @ModelAttribute("user") UserDto user,
                                BindingResult result,
-                               Model model){
+                               Model model) {
         User existing = userService.findByEmail(user.getEmail());
         if (existing != null) {
             result.rejectValue("email", null, "Il y a déjà un compte enregistré avec cet email");
@@ -58,7 +58,7 @@ public class AuthController {
     }
 
     @GetMapping("/users")
-    public String listRegisteredUsers(Model model){
+    public String listRegisteredUsers(Model model) {
         List<UserDto> users = userService.findAllUsers();
         model.addAttribute("users", users);
         return "users";
